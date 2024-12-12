@@ -1,4 +1,8 @@
 @import 'tailwindcss';
+@font-face {
+  font-family: 'Gloss and Bloom';
+  src: url('/r5crea06_secretsanta/font/Gloss_And_Bloom.woff2')
+};
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -8,6 +12,9 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
+:root {
+  --font-sans : "Gloss and Bloom", sans-serif;
+}
 @layer base {
   *,
   ::after,
