@@ -3,6 +3,6 @@ import react from "@vitejs/plugin-react";
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: "/secret-santa/", // add repository name here
+  base: "/r5crea06_secretsanta/", // add repository name here
   plugins: [react()],
 });
