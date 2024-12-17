@@ -62,33 +62,30 @@ export default function App() {
         {/* INPUT */}
         {currentScreen === "input" && (
           <>
-            <h2 className="text-2xl font-bold mb-6 text-center">Ajoutez les participants</h2>
+            <div className=" flex flex-col gap-2 my-8">
+              <h2 className="text-2xl font-bold text-center">Ajoutez des participants</h2>
+              <p className="text-center text-lg leading-5">Entrez les noms des participants, puis appuyez sur "Ajouter"</p>
+            </div>
             <ParticipantInput
               onAddParticipant={addParticipant}
               participants={participants}
               onRemoveParticipant={removeParticipant}
             />
-            <div className="mt-6">
-              <button className="button w-full" onClick={distributeGifts}>
-                Distribuer les cadeaux
-              </button>
+            <div className="mt-6 flex justify-center">
+              <button className="button text-lg px-4 py-2 text-white bg-green-light rounded-md hover:bg-green-dark" onClick={distributeGifts}>Distribuer les cadeaux</button>
             </div>
           </>
         )}
 
         {/* ASSIGNMENTS */}
         {currentScreen === "assignments" && (
-          <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Attributions des cadeaux
-            </h2>
+          <div className=" h-screen flex flex-col items-center justify-center">
+            <h2 className="text-2xl font-bold mb-6 text-center">Attributions des cadeaux</h2>
             <AssignmentDisplay assignments={assignments} />
-            <div className="mt-6">
-              <button className="button w-full" onClick={resetApp}>
-                Recommencer
-              </button>
+            <div className="mt-6 flex justify-center">
+              <button className="button text-lg px-4 py-2 text-white bg-green-light rounded-md hover:bg-green-dark" onClick={resetApp}>Recommencer</button>
             </div>
-          </>
+          </div>
         )}
 
       </div>

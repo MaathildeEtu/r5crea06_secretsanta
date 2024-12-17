@@ -23,33 +23,34 @@ export function ParticipantInput({
   };
 
   return (
-    <div className="space-y-4">
-      // Champs de saisie pour ajouter un participant
-      <div className="flex space-x-2">
+    <div className=" flex flex-col gap-8">
+
+      {/* Champs de saisie pour ajouter un participant */}
+      <div className="flex">
         <input
           type="text"
-          className="input flex-grow"
+          className="input flex-grow text-white"
           placeholder="Entrez un nom"
           value={currentName}
           onChange={(e) => setCurrentName(e.target.value)}
           onKeyPress={(e) => e.key === "Enter" && addParticipant()}
         />
-        <button className="button" onClick={addParticipant}>
+        <button className="button text-white" onClick={addParticipant}>
           Ajouter
         </button>
       </div>
-      // Liste des participants ajoutés
+
+      {/* Liste des participants ajoutés */}
       <ul className="space-y-2">
+        <h3>Vous avez rentrées :</h3>
         {participants.map((name, index) => (
-          <li key={index} className="list-item">
-            {name}
-            <div className="space-x-2">
+          <li key={index} className="flex flex-col gap-0">
+            <div className=" py-2 px-4 bg-white rounded-md">{name}</div>
+            <div className=" flex justify-end">
               <button
-                className="text-red-500 hover:text-red-700"
+                className="text-red-500 hover:text-red-700 text-sm"
                 onClick={() => onRemoveParticipant(index)}
-              >
-                Supprimer
-              </button>
+              >Supprimer</button>
             </div>
           </li>
         ))}

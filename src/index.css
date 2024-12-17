@@ -17,10 +17,16 @@
   If we ever want to remove these styles, we need to add an explicit border
   color utility to any element that depends on these defaults.
 */
-:root {
-  --font-family-primary : "Gloss and Bloom", sans-serif;
-  --font-family-secondary : "Avenir", sans-serif;
+
+@theme {
+  --color-red-light: #e83c43;
+  --color-red-dark: #9b1915;
+  --color-green-light : #7b7c3c;
+  --color-green-dark : #62631f;
+  --color-blue-light : #647e8e;
+  --color-blue-dark : #245571;
 }
+
 @layer base {
   *,
   ::after,
@@ -30,10 +36,35 @@
     border-color: var(--color-gray-200, currentColor);
   }
 
+  :root {
+    --font-family-primary : "Gloss and Bloom", sans-serif;
+    --font-family-secondary : "Avenir", sans-serif;
+
+    --color-red-light: #e83c43;
+    --color-red-dark: #9b1915;
+    --color-green-light : #7b7c3c;
+    --color-green-dark : #62631f;
+    --color-blue-light : #647e8e;
+    --color-blue-dark : #245571;
+  }
+
   h1 {
     font-family: var(--font-family-primary);
+    color: white;
   }
+
+  h2 {
+    font-family: var(--font-family-primary);
+    color: white;
+  }
+
+  h3 {
+    font-family: var(--font-family-secondary);
+    color: white;
+  }
+
   p {
     font-family: var(--font-family-secondary);
+    color: white;
   }
 }

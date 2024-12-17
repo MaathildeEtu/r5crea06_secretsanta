@@ -4,9 +4,9 @@ export function AssignmentDisplay({ assignments }) {
   return (
     <ul className="space-y-2">
       {assignments.map((assignment, index) => (
-        <li key={index}>
-          <span>{assignment.giver}</span> offre un beau cadeau à{" "}
-          <span>{assignment.receiver}</span>
+        <li key={index} className="text-white font-extralight">
+          <span className="font-bold">{assignment.giver}</span> offre un beau cadeau à{" "}
+          <span className="font-bold">{assignment.receiver}</span>
         </li>
       ))}
     </ul>
