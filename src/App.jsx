@@ -51,18 +51,18 @@ export default function App() {
   };
 
   return (
-    <div className="container mx-auto p-4 font-sans">
+    <div className="container mx-auto p-8 font-primary">
       <div>
-        // affiche l'écran en fonction de l'état de l'application // WELCOME
+        {/* Affiche l'écran en fonction de l'état de l'application */}
+        {/* WELCOME */}
         {currentScreen === "welcome" && (
           <WelcomeScreen onStart={() => setCurrentScreen("input")} />
         )}
-        // INPUT
+
+        {/* INPUT */}
         {currentScreen === "input" && (
           <>
-            <h2 className="text-2xl font-bold mb-6 text-center">
-              Ajoutez les participants
-            </h2>
+            <h2 className="text-2xl font-bold mb-6 text-center">Ajoutez les participants</h2>
             <ParticipantInput
               onAddParticipant={addParticipant}
               participants={participants}
@@ -75,7 +75,8 @@ export default function App() {
             </div>
           </>
         )}
-        // ASSIGNMENTS
+
+        {/* ASSIGNMENTS */}
         {currentScreen === "assignments" && (
           <>
             <h2 className="text-2xl font-bold mb-6 text-center">
@@ -89,6 +90,7 @@ export default function App() {
             </div>
           </>
         )}
+
       </div>
     </div>
   );

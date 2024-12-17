@@ -1,8 +1,13 @@
 @import 'tailwindcss';
 @font-face {
   font-family: 'Gloss and Bloom';
-  src: url('/r5crea06_secretsanta/font/Gloss_And_Bloom.woff2')
+  src: url('/r5crea06_secretsanta/font/Gloss_And_Bloom.woff2');
 };
+@font-face {
+  font-family: 'Avenir';
+  src: url('/r5crea06_secretsanta/font/Avenir.woff2');
+};
+
 
 /*
   The default border color has changed to `currentColor` in Tailwind CSS v4,
@@ -13,7 +18,8 @@
   color utility to any element that depends on these defaults.
 */
 :root {
-  --font-sans : "Gloss and Bloom", sans-serif;
+  --font-family-primary : "Gloss and Bloom", sans-serif;
+  --font-family-secondary : "Avenir", sans-serif;
 }
 @layer base {
   *,
@@ -22,5 +28,12 @@
   ::backdrop,
   ::file-selector-button {
     border-color: var(--color-gray-200, currentColor);
+  }
+
+  h1 {
+    font-family: var(--font-family-primary);
+  }
+  p {
+    font-family: var(--font-family-secondary);
   }
 }
