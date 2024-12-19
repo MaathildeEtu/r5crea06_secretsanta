@@ -23,13 +23,13 @@ export function ParticipantInput({
   };
 
   return (
-    <div className=" flex flex-col gap-8">
+    <div className=" flex flex-col gap-4">
 
       {/* Champs de saisie pour ajouter un participant */}
-      <div className="flex">
+      <div className="flex gap-2">
         <input
           type="text"
-          className="input flex-grow text-white"
+          className="input flex-grow text-white px-2 py-1 border rounded-md"
           placeholder="Entrez un nom"
           value={currentName}
           onChange={(e) => setCurrentName(e.target.value)}
@@ -44,14 +44,13 @@ export function ParticipantInput({
       <ul className="space-y-2">
         <h3>Vous avez rentrées :</h3>
         {participants.map((name, index) => (
-          <li key={index} className="flex flex-col gap-0">
-            <div className=" py-2 px-4 bg-white rounded-md">{name}</div>
-            <div className=" flex justify-end">
-              <button
-                className="text-red-500 hover:text-red-700 text-sm"
-                onClick={() => onRemoveParticipant(index)}
-              >Supprimer</button>
-            </div>
+          <li key={index} className="flex flex-row gap-2 items-center">
+            <div className="py-2 px-4 bg-white rounded-md w-full text-green-dark">{name}</div>
+            <button
+                className="bg-red-500 hover:bg-red-700 text-xs p-1 rounded-full"
+                onClick={() => onRemoveParticipant(index)}>
+                  <img className=" text-white" src="./icons8-poubelle.svg" alt="" />
+            </button>
           </li>
         ))}
       </ul>
